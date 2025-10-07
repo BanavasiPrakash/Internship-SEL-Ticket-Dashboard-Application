@@ -10,7 +10,10 @@ const ESCALATED_STATUS_COL_ID = 1004;
 const UNASSIGNED_STATUS_COL_ID = 1005;
 const IN_PROGRESS_STATUS_COL_ID = 1006;
 
-const CANDIDATES_PER_PAGE = 24;
+// const backendurl = "http://localhost:5000"
+const backendurl = "http://192.168.3.8:86"
+
+const CANDIDATES_PER_PAGE = 18;
 
 const Option = (props) => (
   <components.Option {...props}>
@@ -58,7 +61,7 @@ async function fetchZohoDataFromBackend(
   setUnassignedTicketNumbers
 ) {
   try {
-    const url = "http://localhost:5000/api/zoho-assignees-with-ticket-counts";
+    const url = `${backendurl}/api/zoho-assignees-with-ticket-counts`;
     const response = await fetch(url);
     if (!response.ok)
       throw new Error("Failed to fetch Zoho assignee ticket counts");
