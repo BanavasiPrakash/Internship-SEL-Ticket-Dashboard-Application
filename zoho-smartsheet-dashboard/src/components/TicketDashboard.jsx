@@ -11,7 +11,7 @@ const UNASSIGNED_STATUS_COL_ID = 1005;
 const IN_PROGRESS_STATUS_COL_ID = 1006;
 
 const backendurl = "http://localhost:5000";
-const CANDIDATES_PER_PAGE = 18;
+const CANDIDATES_PER_PAGE = 15;
 
 const Option = (props) => (
   <components.Option {...props}>
@@ -340,7 +340,7 @@ useEffect(() => {
                   <div className="count-box unassigned" style={{
                     backgroundColor:
                       counts.latestUnassignedTicketId === unassignedTicketNumbers[currentUnassignedIndex]
-                        ? "#ffd700" : "#ff6666",
+                        ? "#ffd700" : "#bd2331",
                     color:
                       counts.latestUnassignedTicketId === unassignedTicketNumbers[currentUnassignedIndex]
                         ? "#34495e" : "#fff",
@@ -418,16 +418,16 @@ useEffect(() => {
           <div className="legend-bar" style={{
             display: "flex", gap: 10, flex: filtersVisible ? "initial" : 1, transition: "flex 0.3s ease",
           }}>
-            <div className="legend-item open" style={{ flex: 1, textAlign: "center", fontSize: 18, fontWeight: 900 }}>
+            <div className="legend-item open" style={{ flex: 1, textAlign: "center", fontSize: 22, fontWeight: 900 }}>
               OPEN <span style={{ fontWeight: 900, marginLeft: 4 }}>{openSum.toString().padStart(3, "0")}</span>
             </div>
-            <div className="legend-item hold" style={{ flex: 1, textAlign: "center", fontSize: 18, fontWeight: 900 }}>
+            <div className="legend-item hold" style={{ flex: 1, textAlign: "center", fontSize: 22, fontWeight: 900 }}>
               HOLD <span style={{ fontWeight: 900, marginLeft: 4 }}>{holdSum.toString().padStart(3, "0")}</span>
             </div>
-            <div className="legend-item inprogress" style={{ flex: 1, textAlign: "center", fontSize: 18, fontWeight: 900 }}>
+            <div className="legend-item inprogress" style={{ flex: 1, textAlign: "center", fontSize: 22, fontWeight: 900 }}>
               IN PROGRESS <span style={{ fontWeight: 900, marginLeft: 4 }}>{inProgressSum.toString().padStart(3, "0")}</span>
             </div>
-            <div className="legend-item escalated" style={{ flex: 1, textAlign: "center", fontSize: 18, fontWeight: 900 }}>
+            <div className="legend-item escalated" style={{ flex: 1, textAlign: "center", fontSize: 22, fontWeight: 900 }}>
               ESCALATED <span style={{ fontWeight: 900, marginLeft: 4 }}>{escalatedSum.toString().padStart(3, "0")}</span>
             </div>
             <div className="unassigned-box-blink" style={{
@@ -437,24 +437,24 @@ useEffect(() => {
               {rows.length > 0 && (
                 <span
                   style={{
-                    padding: "5px 10px",
+                    padding: "6px 20px",
                     backgroundColor:
                       currentTicketNumber ===
                       rows.find((r) => r.latestUnassignedTicketId)?.latestUnassignedTicketId
-                        ? "#ffd700"
-                        : "#ff6666",
+                        ? "#1e4489"
+                        : "#1e4489",
                     borderRadius: 16,
                     color:
                       currentTicketNumber ===
                       rows.find((r) => r.latestUnassignedTicketId)?.latestUnassignedTicketId
-                        ? "#34495e"
+                        ? "#f5f7f8ff"
                         : "#fff",
                     fontWeight:
                       currentTicketNumber ===
                       rows.find((r) => r.latestUnassignedTicketId)?.latestUnassignedTicketId
                         ? 900
                         : 700,
-                    fontSize: 20,
+                    fontSize: 25,
                     userSelect: "none",
                     display: "inline-block",
                     verticalAlign: "middle",
@@ -550,17 +550,17 @@ useEffect(() => {
           </div>
         )}
 
-        <div
-          className="grid-container"
-          style={{
-            marginTop: 30,
-            display: "grid",
-            gap: "18px",
-            gridTemplateColumns: "repeat(6, 1fr)",
-            gridTemplateRows: "repeat(4, auto)",
-            maxWidth: 1400,
-          }}
-        >
+      <div
+  className="grid-container"
+  style={{
+    marginTop: 30,
+    display: "grid",
+    gap: "18px",
+    gridTemplateColumns: "repeat(5, 1fr)",   // 5 columns
+    gridTemplateRows: "repeat(3, auto)",     // 3 rows
+    maxWidth: 1300,                          // Optional: reduce maxWidth for better fit
+  }}
+>
           {gridCells}
         </div>
 

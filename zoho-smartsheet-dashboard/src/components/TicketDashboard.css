@@ -51,11 +51,11 @@
   padding: 7px 10px;
   border-radius: 17px;
   font-weight: bold;
-  background: linear-gradient(140deg, #d0daf9, #a3baff 89%);
+    background: #0d0d13 !important; 
   box-shadow:
     2px 3px 16px 0 rgba(0, 0, 0, 0.18),
-    0 0 2px #fff inset,
-    0 0 3px #6169e1 inset;
+    0 0 2px #140c0c inset ,
+    0 0 3px #0a0b0f inset !important;
   /* Add color variants via .open, .hold, etc. classes as needed */
 }
 
@@ -74,25 +74,25 @@
 }
 
 .legend-item.hold {
-  border-top: 4px solid #FFC107;
-  color: #8a6d00;
+  border-top: 6px solid #FFC107;
+  color: white;
 }
 
 .legend-item.closed {
-  border-top: 4px solid #F44336;
+  border-top: 6px solid #F44336;
   color: #b71c1c;
 }
 .legend-item.escalated {
-  border-top: 4px solid #ef6724;
+  border-top: 6px solid #ef6724;
   color: #ef6724;
 }
 .legend-item.unassigned {
-  border-top: 4px solid #1e4489;
+  border-top: 6px solid #1e4489;
   color: #1e4489;
 }
 .legend-item.inprogress {
-  border-top: 4px solid #5a2e9d;
-  color: #5a2e9d;
+  border-top: 6px solid #8fe83d;
+  color: #8fe83d;
 }
 
 .legend-item span {
@@ -453,7 +453,7 @@ Hamburger button style
 
 /* Legend OPEN: RED, CLOSED: GREEN */
 .legend-item.open {
-  border-top: 4px solid #f44336;
+  border-top: 6px solid #f44336;
   color: #b71c1c;
 }
 .count-box.open {
@@ -569,16 +569,16 @@ Hamburger button style
 }
 
 
-.spinning-icon {
+/* .spinning-icon {
   animation: spin 1s linear infinite;
   font-size: 40px; /* or your preferred size */
-  color: white /* or your preferred color */
-}
+  /* color: white /* or your preferred color */
+
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
+} */
 
 
 .grid-container {
@@ -597,7 +597,7 @@ Hamburger button style
 /* 3D, neon, flowing red border effect for each card! */
 .grid-cell {
   position: relative;
-  background: #07090d;
+  background: #1e4489;
   border-radius: 26px;
   min-height: 120px;
   box-shadow: 
@@ -645,11 +645,11 @@ Hamburger button style
 
 /* Remove the white/button backgrounds for inner numbers */
 .count-box {
-  background: #11141c;
+  background: #1e4489;
   box-shadow: 0 0 14px #e11c21a1, 0 1.5px 8px #b3274360 inset;
   border: none;
   border-radius: 14px;
-  color: #ff4177;
+  color:red;
   font-weight: 900;
   font-size: 55px;
   margin: 7px 33px 0 33px;
@@ -681,7 +681,7 @@ Hamburger button style
 }
 
 .grid-cell:hover .count-box {
-  background: #2f1123;
+  background: #1e4489;
   color: #ffb7cc;
   box-shadow: 0 2px 14px #ff418c90;
 }
@@ -702,7 +702,7 @@ Hamburger button style
   position: relative;
   border-radius: 16px;
   padding: 20px;
-  background: #111;
+  background: #1e4489;
   z-index: 0;
 }
 
